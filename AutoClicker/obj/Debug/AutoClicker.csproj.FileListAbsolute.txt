@@ -11,3 +11,16 @@ C:\Users\Игорь\source\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.p
 C:\Users\Игорь\source\repos\AutoClicker\AutoClicker\bin\Debug\WindowsInput.dll
 C:\Users\Игорь\source\repos\AutoClicker\AutoClicker\bin\Debug\WindowsInput.xml
 C:\Users\Игорь\source\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.csproj.CopyComplete
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\bin\Debug\AutoClicker.exe.config
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\bin\Debug\AutoClicker.exe
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\bin\Debug\AutoClicker.pdb
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\bin\Debug\WindowsInput.dll
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\bin\Debug\WindowsInput.xml
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Debug\AutoClicker.csprojAssemblyReference.cache
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Debug\AutoClicker.Form1.resources
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Debug\AutoClicker.Properties.Resources.resources
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Debug\AutoClicker.csproj.GenerateResource.cache
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Debug\AutoClicker.csproj.CoreCompileInputs.cache
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Debug\AutoClicker.csproj.CopyComplete
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Debug\AutoClicker.exe
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Debug\AutoClicker.pdb

@@ -181,5 +181,10 @@ namespace AutoClicker
             numbersY.Clear();
             label1.Text = "";
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
