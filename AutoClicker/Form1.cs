@@ -15,7 +15,7 @@ namespace AutoClicker
     public partial class Form1 : Form
     {
         int qwe = 0;
-        int CountClick = 700;
+        int CountClick = 5000;
         private readonly Timer tmrShow;
         private readonly Timer ClickShow;
         private readonly Timer TimeShow;
@@ -33,7 +33,7 @@ namespace AutoClicker
             tmrShow.Tick += tmrShow_Tick;
 
             ClickShow = new Timer();
-            ClickShow.Interval = 40000;
+            ClickShow.Interval = 60000;
             ClickShow.Tick += ClickShow_Tick;
 
             TimeShow = new Timer();
@@ -87,7 +87,7 @@ namespace AutoClicker
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             if (!isPress)
             {
@@ -104,6 +104,12 @@ namespace AutoClicker
                 TimeShow.Enabled = false;
             }
         }
+
+        public void Message()
+        {
+            MessageBox.Show("OK!");
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (isPressqwe)

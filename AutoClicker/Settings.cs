@@ -14,7 +14,7 @@ namespace AutoClicker
     {
         Form1 asd = new Form1();
         bool isPress = false;
-        private Keys CurrentKey;
+        private Keys CurrentKey = Keys.L;
 
         public Settings()
         {
@@ -48,19 +48,21 @@ namespace AutoClicker
         {
             if (e.KeyCode == CurrentKey)
             {
-                int x = Cursor.Position.X;
-                int y = Cursor.Position.Y;
+                int x1 = Cursor.Position.X;
+                int y1 = Cursor.Position.Y;
 
-                asd.numbersX.Add(x);
-                asd.numbersY.Add(y);
+                asd.numbersX.Add(x1);
+                asd.numbersY.Add(y1);
 
-                PointWindow.Text = PointWindow.Text + x + " " + y + "\n";
+                asd.label1.Text = asd.label1.Text + x1 + " " + y1 + "\n";
+
+                PointWindow.Text = PointWindow.Text + x1 + " " + y1 + "\n";
             }
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-
+            asd.Message();
         }
     }
 }
