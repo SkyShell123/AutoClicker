@@ -24,3 +24,4 @@ C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Deb
 C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Debug\AutoClicker.csproj.CopyComplete
 C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Debug\AutoClicker.exe
 C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Debug\AutoClicker.pdb
+C:\Users\Игорь\source\repos\AutoClicker\AutoClicker.git\AutoClicker\obj\Debug\AutoClicker.Settings.resources

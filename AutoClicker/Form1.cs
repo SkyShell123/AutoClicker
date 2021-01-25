@@ -21,8 +21,8 @@ namespace AutoClicker
         private readonly Timer TimeShow;
         bool isPress = false;
         bool isPressqwe = false;
-        List<int> numbersX = new List<int>();
-        List<int> numbersY = new List<int>();
+        public List<int> numbersX = new List<int>();
+        public List<int> numbersY = new List<int>();
 
         public Form1()
         {
@@ -41,13 +41,15 @@ namespace AutoClicker
             TimeShow.Tick += Time_Tick;
         }
 
-        private void tmrShow_Tick(object sender, EventArgs e)
+        public void tmrShow_Tick(object sender, EventArgs e)
         {
             int x = Cursor.Position.X;
             int y = Cursor.Position.Y;
 
             numbersX.Add(x);
             numbersY.Add(y);
+
+
 
             label1.Text = label1.Text + x + " " + y + "\n";
             
@@ -167,7 +169,7 @@ namespace AutoClicker
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public void button3_Click(object sender, EventArgs e)
         {
             if (isPress)
             {
@@ -184,7 +186,8 @@ namespace AutoClicker
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            Settings PlayForm = new Settings();
+            PlayForm.Show();
         }
     }
 }
