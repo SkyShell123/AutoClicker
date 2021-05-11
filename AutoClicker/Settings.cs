@@ -12,22 +12,38 @@ namespace AutoClicker
 {
     public partial class Settings : Form
     {
-        Form1 asd = new Form1();
         bool isPress = false;
-        private Keys CurrentKey = Keys.L;
+        private Keys CurrentKey;
+
+        public List<int> numbersX = new List<int>();
+        public List<int> numbersY = new List<int>();
+        public string qwe;
+        public int Time_delay;
+        public int Cycles;
+
+
 
         public Settings()
         {
             InitializeComponent();
 
-            this.KeyUp += new KeyEventHandler(OKP);
+            
+            CurrentKey = Keys.L;
+            KeySelect.Text = CurrentKey.ToString();
         }
 
         private void KeySelect_Click(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
+            KeySelect.Text = "???";
+            this.KeyDown += new KeyEventHandler(KeySelect_KeyDown);
+        }
 
-            //CurrentKey = e.KeyUp;
-
+        private void KeySelect_KeyDown(object sender, KeyEventArgs e)
+        {
+            CurrentKey = e.KeyCode;
+            KeySelect.Text = CurrentKey.ToString();
+            this.KeyPreview = false;
         }
 
         private void RecButt_Click(object sender, EventArgs e)
@@ -35,34 +51,44 @@ namespace AutoClicker
             if (!isPress)
             {
                 isPress = true;
-                KeyPreview = true;
+                RecButt.Text = "Стоп";
+                this.KeyPreview = true;
+                this.KeyDown += new KeyEventHandler(RecButt_KeyDown);
             }
             else
             {
                 isPress = false;
-                KeyPreview = false;
+                this.KeyPreview = false;
+                RecButt.Text = "Запись";
             }
         }
 
-        private void OKP(object sender, KeyEventArgs e)
+        private void RecButt_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == CurrentKey)
             {
-                int x1 = Cursor.Position.X;
-                int y1 = Cursor.Position.Y;
+                
+                int x = Cursor.Position.X;
+                int y = Cursor.Position.Y;
 
-                asd.numbersX.Add(x1);
-                asd.numbersY.Add(y1);
+                numbersX.Add(x);
+                numbersY.Add(y);
 
-                asd.label1.Text = asd.label1.Text + x1 + " " + y1 + "\n";
+                qwe = qwe + x + " " + y + "\n";
 
-                PointWindow.Text = PointWindow.Text + x1 + " " + y1 + "\n";
+                PointWindow.Text = PointWindow.Text + x + " " + y + "\n";
             }
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-            asd.Message();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Time_delay = Convert.ToInt32(textBox1.Text);
+            Cycles= Convert.ToInt32(textBox2.Text);
         }
     }
 }

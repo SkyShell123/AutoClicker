@@ -15,7 +15,8 @@ namespace AutoClicker
     public partial class Form1 : Form
     {
         int qwe = 0;
-        int CountClick = 5000;
+        public int timeInterval = 60000;
+        int CountClick = 1000;
         private readonly Timer tmrShow;
         private readonly Timer ClickShow;
         private readonly Timer TimeShow;
@@ -33,12 +34,15 @@ namespace AutoClicker
             tmrShow.Tick += tmrShow_Tick;
 
             ClickShow = new Timer();
-            ClickShow.Interval = 60000;
+            ClickShow.Interval = timeInterval;
             ClickShow.Tick += ClickShow_Tick;
 
             TimeShow = new Timer();
             TimeShow.Interval = 1;
             TimeShow.Tick += Time_Tick;
+
+            
+
         }
 
         public void tmrShow_Tick(object sender, EventArgs e)
@@ -48,8 +52,6 @@ namespace AutoClicker
 
             numbersX.Add(x);
             numbersY.Add(y);
-
-
 
             label1.Text = label1.Text + x + " " + y + "\n";
             
@@ -119,13 +121,14 @@ namespace AutoClicker
                 button2.Text = "Пуск";
                 isPressqwe = false;
             }
-            else
+            else if (!isPressqwe)
             {
+
                 TimeShow.Enabled = true;
                 button2.Text = "Стоп";
                 isPressqwe = true;
 
-                if (numbersX.Count > 0)
+                if (numbersX.Count != 0)
                 {
                     if (isPress)
                     {
@@ -161,10 +164,7 @@ namespace AutoClicker
         {
             for (int i = 0; i < numbersX.Count; i++)
             {
-                int x = numbersX.ElementAt(i);
-                int y = numbersY.ElementAt(i);
-
-                Cursor.Position = new Point(x, y);
+                Cursor.Position = new Point(numbersX[i], numbersY[i]);
 
                 var sim = new InputSimulator();
                 sim.Mouse.LeftButtonClick();
@@ -192,8 +192,19 @@ namespace AutoClicker
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Settings PlayForm = new Settings();
-            PlayForm.Show();
+
+            Settings f = new Settings();
+            f.ShowDialog();
+
+            this.numbersX = f.numbersX;
+            this.numbersY = f.numbersY;
+            this.label1.Text = f.qwe;
+            this.timeInterval = f.Time_delay * 1000;
+            this.CountClick = f.Cycles;
+            ClickShow.Interval = timeInterval;
+
+
+            //MessageBox.Show(numbersX[0].ToString());
         }
     }
 }
