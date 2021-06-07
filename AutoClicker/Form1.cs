@@ -96,13 +96,11 @@ namespace AutoClicker
                 tmrShow.Enabled = true;
                 TimeShow.Enabled = true;
                 isPress = true;
-                button1.Text = "Стоп";
             }
             else
             {
                 tmrShow.Enabled = false;
                 isPress = false;
-                button1.Text = "Запись";
                 TimeShow.Enabled = false;
             }
         }
@@ -134,7 +132,6 @@ namespace AutoClicker
                     {
                         tmrShow.Enabled = false;
                         isPress = false;
-                        button1.Text = "Запись";
                         TimeShow.Enabled = false;
                     }
 
@@ -181,7 +178,6 @@ namespace AutoClicker
             {
                 tmrShow.Enabled = false;
                 isPress = false;
-                button1.Text = "Запись";
                 TimeShow.Enabled = false;
             }
 
@@ -196,15 +192,19 @@ namespace AutoClicker
             Settings f = new Settings();
             f.ShowDialog();
 
-            this.numbersX = f.numbersX;
-            this.numbersY = f.numbersY;
-            this.label1.Text = f.qwe;
-            this.timeInterval = f.Time_delay * 1000;
-            this.CountClick = f.Cycles;
-            ClickShow.Interval = timeInterval;
+            if (f.Time_delay > 0)
+            {
+                this.timeInterval = f.Time_delay * 1000;
+                this.CountClick = f.Cycles;
+                this.numbersX = f.numbersX;
+                this.numbersY = f.numbersY;
+                this.label1.Text = f.qwe;
+                ClickShow.Interval = timeInterval;
+            }
 
-
-            //MessageBox.Show(numbersX[0].ToString());
+            
+            
+            
         }
     }
 }
